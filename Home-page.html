@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Converter</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        header {
+            background-color: #333;
+            /* background:linear-gradient(45deg,rgb(1, 4, 45),#490d61); */
+            color: orange;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+
+        .small-text{
+            color: white;
+        }
+        
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .start-button {
+            background-color:orange;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .start-button:hover {
+            background-color: #eb8423;
+        }
+        .intro-text {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: orange;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .message-box {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9d27c;
+            border-radius: 5px;
+            color: #333;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Text-to-Speech Converter</h1>
+        <p class="small-text">Convert any text into speech with ease!</p>
+    </header>
+
+    <div class="container">
+        <p class="intro-text">
+            Welcome to our <b style="text-decoration: underline;">Text-to-Speech Converter! </b> With this tool, you can easily convert any text into speech using a variety of voices.
+            Whether you want to listen to articles, messages, or just have fun with different voices, this app has you covered.
+        </p>
+        
+        <p class="intro-text">
+            Simply enter the text in the provided box, choose your preferred voice from the options, and click "Start" to listen.
+            You can also adjust the speed, pitch, and other settings to customize the voice to your liking.
+        </p>
+
+        <div class="button-container">
+            <button class="start-button" id="startBtn">Start Now</button>
+        </div>
+        
+        <div class="message-box" id="messageBox">
+            <p>Thank you for using our Text-to-Speech Converter!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Text-to-Speech Converter. All rights reserved.</p>
+        <p>Learn more about <a href="https://en.wikipedia.org/wiki/Text-to-speech" target="_blank">Text-to-Speech Technology</a>.</p>
+    </footer>
+
+    <script>
+        
+        document.getElementById('startBtn').addEventListener('click', function(){
+        document.getElementById('messageBox').style.display = 'block';
+        setTimeout(function() {
+               window.location.href = 'index.html';
+            }, 3000); // Redirect after 3 seconds
+        });
+    </script>
+
+</body>
+</html>

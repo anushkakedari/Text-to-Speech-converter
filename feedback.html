@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: rgb(247, 164, 69);
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background-color: rgb(241, 213, 160);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .button {
+            background-color: rgb(19, 14, 7);
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+        .button:hover {
+            background-color: rgb(58, 58, 56);
+        }
+        .thank-you-message {
+            text-align: center;
+            color: rgb(175, 102, 6);
+            font-size: 18px;
+            font-weight: bold;
+            display: none;
+        }
+        /* .home{
+            background-color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+        .home a:hover::after{
+            color: #000;
+        } */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>User Feedback for Text-to-Speech Service</h1>
+    </header>
+
+    <div class="container">
+        <h2>Your Feedback Matters!</h2>
+        <p>Please provide your valuable feedback to help us improve the Text-to-Speech service.</p>
+
+        <form id="feedback-form">
+            <label for="name">Your Name (optional):</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Your Email (optional):</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="rating">How would you rate the service?</label>
+            <select id="rating" name="rating">
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <label for="message">Your Feedback:</label>
+            <textarea id="message" name="message" placeholder="Write your feedback here..." required></textarea>
+
+            <button type="submit" class="button">Submit Feedback</button>
+            <!-- <button><a href="Home-page.html" class="home">Home</a></button> -->
+        </form>
+
+        <div class="thank-you-message" id="thank-you-message">
+            Thank you for your feedback! We really appreciate it.
+        </div>
+    </div>
+
+    <script>
+        // Get references to the form elements
+        const form = document.getElementById('feedback-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        // Handle form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Gather the feedback data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const rating = document.getElementById('rating').value;
+            const message = document.getElementById('message').value;
+
+            // Show the thank you message
+            thankYouMessage.style.display = 'block';
+
+            // Optionally, you could log the feedback or send it to a server
+            console.log('Feedback submitted:', {
+                name: name,
+                email: email,
+                rating: rating,
+                message: message
+            });
+
+            // Reset the form fields after submission
+            form.reset();
+            
+        });
+    </script>
+
+</body>
+</html>
